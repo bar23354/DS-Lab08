@@ -1,0 +1,19 @@
+$ docker compose ps
+NAME            SERVICE    STATE     PORTS
+lab8-lab        lab        running   127.0.0.1:8888->8888/tcp
+lab8-metabase   metabase   running   127.0.0.1:3000->3000/tcp
+
+$ curl http://localhost:3000/api/health
+{"status":"ok"}
+
+$ docker compose exec lab python scripts/verificar_ambiente.py
+Python 3.11.14 en Linux
+duckdb 1.5.5
+pandas 3.0.6
+pyarrow 25.0.1
+matplotlib 3.11.2
+requests 2.34.2
+jupyterlab 4.6.4
+DuckDB escribe y lee Parquet: 1000 filas
+Estructura completa
+Metabase: ok
