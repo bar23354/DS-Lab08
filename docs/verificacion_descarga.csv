@@ -1,0 +1,17 @@
+tipo,archivo,bytes_servidor,bytes_local,registros,estado
+green,green_tripdata_2026-01.parquet,991656,991656,40272,completo
+green,green_tripdata_2026-02.parquet,920753,920753,37373,completo
+green,green_tripdata_2026-03.parquet,1082530,1082530,44208,completo
+green,green_tripdata_2026-04.parquet,1075896,1075896,44238,completo
+green,green_tripdata_2026-05.parquet,1102947,1102947,44921,completo
+green,green_tripdata_2026-06.parquet,1075836,1075836,44163,completo
+green,green_tripdata_2026-07.parquet,1018250,1018250,41252,completo
+green,green_tripdata_2026-08.parquet,1007530,1007530,40687,completo
+yellow,yellow_tripdata_2026-01.parquet,64165080,64165080,3724889,completo
+yellow,yellow_tripdata_2026-02.parquet,58683353,58683353,3399866,completo
+yellow,yellow_tripdata_2026-03.parquet,67891249,67891249,3952451,completo
+yellow,yellow_tripdata_2026-04.parquet,64818115,64818115,3831240,completo
+yellow,yellow_tripdata_2026-05.parquet,69699174,69699174,4090836,completo
+yellow,yellow_tripdata_2026-06.parquet,65465637,65465637,3837248,completo
+yellow,yellow_tripdata_2026-07.parquet,61685033,61685033,3530109,completo
+yellow,yellow_tripdata_2026-08.parquet,59043961,59043961,3336716,completo

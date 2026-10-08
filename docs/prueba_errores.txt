@@ -1,0 +1,24 @@
+$ python scripts/verificar_descarga.py
+green_tripdata_2026-02.parquet: tamaño distinto, None registros
+green_tripdata_2026-03.parquet: falta, None registros
+yellow_tripdata_2026-09.parquet: no publicado, None registros
+14 de 16 archivos publicados completos. Detalle en docs/verificacion_descarga.csv
+
+$ python scripts/download_data.py
+  2026-09  el archivo local está incompleto, se descarga de nuevo
+  2026-09  aun no publicado por la TLC
+  2026-02  el archivo local está incompleto, se descarga de nuevo
+  2026-02  descargando...
+  2026-02  listo (899.2 KiB) en data/raw/green/2026/green_tripdata_2026-02.parquet
+  2026-03  descargando...
+  2026-03  listo (1.0 MiB) en data/raw/green/2026/green_tripdata_2026-03.parquet
+  2026-09  aun no publicado por la TLC
+  descargados   : 2
+  ya existian   : 14
+  no publicados : 8
+      yellow 2026-09, yellow 2026-10, yellow 2026-11, yellow 2026-12, green 2026-09, green 2026-10, green 2026-11, green 2026-12
+  fallidos      : 0
+
+$ rm data/raw/yellow/2026/yellow_tripdata_2026-09.parquet
+$ python scripts/verificar_descarga.py
+16 de 16 archivos publicados completos. Detalle en docs/verificacion_descarga.csv

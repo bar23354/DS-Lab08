@@ -1,15 +1,14 @@
-# Parte 2. Descarga de datos
+# Parte 3. Verificación de la descarga
 
-Modificación del script de descarga del repositorio base para los taxis amarillos y verdes de 2026, incisos 2.1 a 2.4.
+Ejecución de la descarga de 2026 y revisión de que el conjunto esté completo, incisos 2.5 a 2.7.
 
 ## Ejecución
 
 ```bash
-cd 02_descarga
+cd 03_verificacion
 docker compose up -d --build
 docker compose exec lab python scripts/download_data.py
+docker compose exec lab python scripts/verificar_descarga.py
 ```
 
-Los archivos quedan en data/raw, en una carpeta por tipo de taxi y año. Los que ya existen y están completos no se descargan otra vez.
-
-El análisis del script proporcionado y los cambios están en docs/descarga.md.
+El detalle por archivo queda en docs/verificacion_descarga.csv. Los resultados, los cambios al script y el criterio de completitud están en docs/verificacion.md.

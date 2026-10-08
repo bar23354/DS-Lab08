@@ -1,0 +1,95 @@
+$ python scripts/download_data.py
+
+=== YELLOW 2026 ===
+  2026-01  descargando...
+  2026-01  listo (61.2 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-01.parquet
+  2026-02  descargando...
+  2026-02  listo (56.0 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-02.parquet
+  2026-03  descargando...
+  2026-03  listo (64.7 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-03.parquet
+  2026-04  descargando...
+  2026-04  listo (61.8 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-04.parquet
+  2026-05  descargando...
+  2026-05  listo (66.5 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-05.parquet
+  2026-06  descargando...
+  2026-06  listo (62.4 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-06.parquet
+  2026-07  descargando...
+  2026-07  listo (58.8 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-07.parquet
+  2026-08  descargando...
+  2026-08  listo (56.3 MiB) en data/raw/yellow/2026/yellow_tripdata_2026-08.parquet
+  2026-09  aun no publicado por la TLC
+  2026-10  aun no publicado por la TLC
+  2026-11  aun no publicado por la TLC
+  2026-12  aun no publicado por la TLC
+
+=== GREEN 2026 ===
+  2026-01  descargando...
+  2026-01  listo (968.4 KiB) en data/raw/green/2026/green_tripdata_2026-01.parquet
+  2026-02  descargando...
+  2026-02  listo (899.2 KiB) en data/raw/green/2026/green_tripdata_2026-02.parquet
+  2026-03  descargando...
+  2026-03  listo (1.0 MiB) en data/raw/green/2026/green_tripdata_2026-03.parquet
+  2026-04  descargando...
+  2026-04  listo (1.0 MiB) en data/raw/green/2026/green_tripdata_2026-04.parquet
+  2026-05  descargando...
+  2026-05  listo (1.1 MiB) en data/raw/green/2026/green_tripdata_2026-05.parquet
+  2026-06  descargando...
+  2026-06  listo (1.0 MiB) en data/raw/green/2026/green_tripdata_2026-06.parquet
+  2026-07  descargando...
+  2026-07  listo (994.4 KiB) en data/raw/green/2026/green_tripdata_2026-07.parquet
+  2026-08  descargando...
+  2026-08  listo (983.9 KiB) en data/raw/green/2026/green_tripdata_2026-08.parquet
+  2026-09  aun no publicado por la TLC
+  2026-10  aun no publicado por la TLC
+  2026-11  aun no publicado por la TLC
+  2026-12  aun no publicado por la TLC
+
+============================================================
+RESUMEN
+============================================================
+  descargados   : 16
+  ya existian   : 0
+  no publicados : 8
+      yellow 2026-09, yellow 2026-10, yellow 2026-11, yellow 2026-12, green 2026-09, green 2026-10, green 2026-11, green 2026-12
+  fallidos      : 0
+============================================================
+
+$ python scripts/download_data.py
+
+=== YELLOW 2026 ===
+  2026-01  ya existe, se omite
+  2026-02  ya existe, se omite
+  2026-03  ya existe, se omite
+  2026-04  ya existe, se omite
+  2026-05  ya existe, se omite
+  2026-06  ya existe, se omite
+  2026-07  ya existe, se omite
+  2026-08  ya existe, se omite
+  2026-09  aun no publicado por la TLC
+  2026-10  aun no publicado por la TLC
+  2026-11  aun no publicado por la TLC
+  2026-12  aun no publicado por la TLC
+
+=== GREEN 2026 ===
+  2026-01  ya existe, se omite
+  2026-02  ya existe, se omite
+  2026-03  ya existe, se omite
+  2026-04  ya existe, se omite
+  2026-05  ya existe, se omite
+  2026-06  ya existe, se omite
+  2026-07  ya existe, se omite
+  2026-08  ya existe, se omite
+  2026-09  aun no publicado por la TLC
+  2026-10  aun no publicado por la TLC
+  2026-11  aun no publicado por la TLC
+  2026-12  aun no publicado por la TLC
+
+============================================================
+RESUMEN
+============================================================
+  descargados   : 0
+  ya existian   : 16
+  no publicados : 8
+      yellow 2026-09, yellow 2026-10, yellow 2026-11, yellow 2026-12, green 2026-09, green 2026-10, green 2026-11, green 2026-12
+  fallidos      : 0
+============================================================
