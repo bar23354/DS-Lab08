@@ -15,6 +15,7 @@ Comportamiento:
   - Pregunta al servidor qué meses están publicados y distingue un mes sin publicar de un error de red
   - Un archivo que ya existe y es un Parquet completo no se vuelve a descargar
   - Descarga sobre un nombre temporal, compara los bytes con el tamaño del servidor y recién entonces renombra
+  - Descarga el catálogo de zonas en data/raw/zonas
 """
 
 import argparse
@@ -26,6 +27,7 @@ import requests
 ANIOS = (2026,)
 TIPOS_TAXI = ("yellow", "green")
 URL_BASE = "https://d37ci6vzurychx.cloudfront.net/trip-data"
+URL_ZONAS = "https://d37ci6vzurychx.cloudfront.net/misc/taxi_zone_lookup.csv"
 # Ruta calculada desde la ubicación del script, así no depende de la carpeta de trabajo
 DIR_DESTINO = Path(__file__).resolve().parents[1] / "data" / "raw"
 
@@ -168,6 +170,21 @@ def main() -> int:
             total["omitidos"] += resumen["omitidos"]
             total["no_publicados"] += [f"{tipo} {m}" for m in resumen["no_publicados"]]
             total["fallidos"] += [f"{tipo} {m}" for m in resumen["fallidos"]]
+
+    # Catálogo de zonas para traducir PULocationID y DOLocationID a distrito y zona
+    zonas = DIR_DESTINO / "zonas" / "taxi_zone_lookup.csv"
+    if zonas.exists():
+        print("\n  taxi_zone_lookup.csv  ya existe, se omite")
+        total["omitidos"] += 1
+    else:
+        try:
+            escritos = descargar_archivo(URL_ZONAS, zonas, tamanio_publicado(URL_ZONAS) or 0)
+        except requests.RequestException as error:
+            print(f"\n  taxi_zone_lookup.csv  ERROR: {error}")
+            total["fallidos"].append("zonas")
+        else:
+            print(f"\n  taxi_zone_lookup.csv  listo ({formato_tamanio(escritos)})")
+            total["descargados"] += 1
 
     print("\n" + "=" * 60)
     print("RESUMEN")

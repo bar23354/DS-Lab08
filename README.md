@@ -1,14 +1,22 @@
-# Parte 3. Verificación de la descarga
+# Parte 4. Exploración con DuckDB
 
-Ejecución de la descarga de 2026 y revisión de que el conjunto esté completo, incisos 2.5 a 2.7.
+Consultas directas sobre los Parquet de 2026 y análisis exploratorio, ejercicios 3 y 4.
 
 ## Ejecución
 
 ```bash
-cd 03_verificacion
+cd 04_exploracion
 docker compose up -d --build
 docker compose exec lab python scripts/download_data.py
-docker compose exec lab python scripts/verificar_descarga.py
+docker compose exec lab jupyter nbconvert --to notebook --execute --inplace notebooks/03_consultas_parquet.ipynb
+docker compose exec lab jupyter nbconvert --to notebook --execute --inplace notebooks/04_analisis_exploratorio.ipynb
 ```
 
-El detalle por archivo queda en docs/verificacion_descarga.csv. Los resultados, los cambios al script y el criterio de completitud están en docs/verificacion.md.
+Los notebooks se pueden ejecutar desde JupyterLab en http://localhost:8888.
+
+| Notebook | Contenido |
+| --- | --- |
+| 03_consultas_parquet | Archivos, registros, columnas, tipos, muestra y calidad de datos |
+| 04_analisis_exploratorio | Preguntas, consultas, resultados y hallazgos |
+
+Las consultas están en sql/ej3 y sql/ej4, y sql/vistas.sql define las vistas viajes, viajes_validos y zonas. La descarga agrega el catálogo de zonas de la TLC.
