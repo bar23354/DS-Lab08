@@ -1,17 +1,15 @@
-# Parte 1. Ambiente
+# Parte 2. Descarga de datos
 
-Ambiente de Docker del repositorio base, con JupyterLab y Metabase, para el ejercicio 1.
+Modificación del script de descarga del repositorio base para los taxis amarillos y verdes de 2026, incisos 2.1 a 2.4.
 
-## Levantar el ambiente
-
-Requiere Docker con Compose.
+## Ejecución
 
 ```bash
-cd 01_ambiente
+cd 02_descarga
 docker compose up -d --build
-docker compose exec lab python scripts/verificar_ambiente.py
+docker compose exec lab python scripts/download_data.py
 ```
 
-JupyterLab queda en http://localhost:8888 y Metabase en http://localhost:3000. Los servicios se detienen con docker compose down.
+Los archivos quedan en data/raw, en una carpeta por tipo de taxi y año. Los que ya existen y están completos no se descargan otra vez.
 
-La estructura del proyecto, las herramientas y la verificación del ambiente están en docs/ambiente.md.
+El análisis del script proporcionado y los cambios están en docs/descarga.md.
