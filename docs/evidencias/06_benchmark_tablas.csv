@@ -1,0 +1,4 @@
+conjunto,archivos,registros,mb_parquet,mb_duckdb,creacion_tabla_s
+1 mes,2,3765161,65.2,106.4,1.0
+8 meses,16,30040469,519.7,850.9,3.71
+20 meses,40,71870407,1228.6,2021.7,8.66

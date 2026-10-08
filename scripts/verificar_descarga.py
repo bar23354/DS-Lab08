@@ -12,7 +12,7 @@ from download_data import ANIOS, DIR_DESTINO, TIPOS_TAXI, URL_BASE
 
 PAGINA = "https://www.nyc.gov/site/tlc/about/tlc-trip-record-data.page"
 RAIZ = DIR_DESTINO.parents[1]
-SALIDA = RAIZ / "docs" / "verificacion_descarga.csv"
+SALIDA = RAIZ / "docs" / "evidencias" / "02_verificacion_descarga.csv"
 CAMPOS = ["tipo", "archivo", "bytes_servidor", "bytes_local", "registros", "estado"]
 
 
@@ -56,7 +56,7 @@ def main():
                 filas.append({"tipo": ruta.parent.parent.name, "archivo": ruta.name, "bytes_servidor": None,
                               "bytes_local": ruta.stat().st_size, "registros": None, "estado": "no publicado"})
 
-    SALIDA.parent.mkdir(exist_ok=True)
+    SALIDA.parent.mkdir(parents=True, exist_ok=True)
     with open(SALIDA, "w", newline="", encoding="utf-8") as archivo:
         escritor = csv.DictWriter(archivo, fieldnames=CAMPOS)
         escritor.writeheader()

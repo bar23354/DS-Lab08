@@ -12,14 +12,14 @@ RAIZ = Path(__file__).resolve().parents[1]
 SQL = RAIZ / "sql"
 RAW = RAIZ / "data" / "raw"
 PROCESADOS = RAIZ / "data" / "processed"
-DOCS = RAIZ / "docs"
+EVIDENCIAS = RAIZ / "docs" / "evidencias"
 REPETICIONES = 5
 
 # Archivos de cada conjunto, como patrón dentro de data/raw/<tipo>/
 CONJUNTOS = {
     "1 mes": "2026/*_2026-01.parquet",
     "8 meses": "2026/*.parquet",
-    "20 meses": "*/*.parquet",
+    "20 meses": "202[46]/*.parquet",
 }
 CONSULTAS = [
     "benchmark/01_conteo.sql",
@@ -84,7 +84,7 @@ def iguales(a, b):
 
 
 def guardar(nombre, filas):
-    with open(DOCS / nombre, "w", newline="", encoding="utf-8") as archivo:
+    with open(EVIDENCIAS / nombre, "w", newline="", encoding="utf-8") as archivo:
         escritor = csv.DictWriter(archivo, fieldnames=filas[0].keys())
         escritor.writeheader()
         escritor.writerows(filas)
@@ -93,7 +93,7 @@ def guardar(nombre, filas):
 def main():
     os.chdir(RAIZ)
     PROCESADOS.mkdir(parents=True, exist_ok=True)
-    DOCS.mkdir(exist_ok=True)
+    EVIDENCIAS.mkdir(parents=True, exist_ok=True)
     tablas, tiempos = [], []
 
     for conjunto, patron in CONJUNTOS.items():
@@ -130,9 +130,9 @@ def main():
             print(f"  {fila['consulta']} {fila['estrategia']}: {fila['mediana_s']:.3f} s, mismo resultado {fila['mismo_resultado']}")
         tiempos.extend(filas)
 
-    guardar("benchmark_tablas.csv", tablas)
-    guardar("benchmark_tiempos.csv", tiempos)
-    print("Resultados en docs/benchmark_tablas.csv y docs/benchmark_tiempos.csv")
+    guardar("06_benchmark_tablas.csv", tablas)
+    guardar("06_benchmark_tiempos.csv", tiempos)
+    print("Resultados en docs/evidencias/06_benchmark_tablas.csv y docs/evidencias/06_benchmark_tiempos.csv")
 
 
 if __name__ == "__main__":
